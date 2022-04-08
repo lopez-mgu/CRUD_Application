@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo"><a>ActiveMotion</a></div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-button-container">
+          <div class="menu-button"></div>
+        </label>
+        <ul class="menu">
+          <li><a>Alimentación</a></li>
+          <li><a>Entrenamiento</a></li>
+          <li><a>Articulos</a></li>
+          <li><a>Acerca de</a></li>
+          <li><a>Subscribete</a></li>
+        </ul>
+    </header>
+    <section class="main">
+      <div class="main-area">
+        <div class="main-content">
+          <h2>Arma, Controla y Planifica tus Entrenamientos</h2>
+          <p>Crea tu rutina a tu medida, agrega los pesos que manejas así como el número de repeticiones y series. Aquí encontrarás una manera sencilla de planificar tus entrenamientos semanalmente.</p>
+          <p>Sólo necesitarás seleccionar el día al que quieres agregar cada ejercico y modificar el titulo del mismo del dropdown list siguiente. Una vez hayas agregado tus ejercicos podrás verlos al dar click sobre el día que quieras ver.</p>
+        </div>
+        <form class="io-area">
+          <div class="dp-form">
+            <datalist id="dp-days">
+              <option value="Domingo"></option>
+              <option value="Lunes"></option>
+              <option value="Martes"></option>
+              <option value="Miercoles"></option>
+              <option value="Jueves"></option>
+              <option value="Viernes"></option>
+              <option value="Sabado"></option>
+            </datalist>
+            <label for="dp-days" class="input-label">Selecciona Día de Entrenamiento</label>
+            <input type="search" id="dp-input" list="dp-days">
+          </div>
+          <div class="title-form">
+            <label for="day-title" class="input-label">Titulo de Entrenamiento</label>
+            <input type="text" name="day-title" id="day-title">
+            <button class="io-button" id="day-title-button">Cambiar Titulo</button>
+          </div>
+          <div class="form-inputs-group">
+            <label for="day-exercise" class="input-label">Nombre de Ejercicio</label>
+            <input type="text" name="day-exercise" id="day-exercise">
+            <label for="day-series" class="input-label">Número de Series</label>
+            <input type="number" id="day-series" min="0">
+            <label for="day-reps" class="input-label">Número de Repeticiones</label>
+            <input type="number" id="day-reps" min="0">
+          </div>
+          <button class="io-button" id="day-exercise-button">Agregar Ejercicio</button>
+        </form>
+      </div>
+      <div class="accordion-area">
+        <div class="tabs">
+          <div class="tab">
+            <input type="checkbox" class="tab-input" id="chck1">
+            <label class="tab-label" for="chck1">Domingo</label>
+            <div class="tab-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" class="tab-input" id="chck2">
+            <label class="tab-label" for="chck2">Lunes</label>
+            <div class="tab-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" class="tab-input" id="chck3">
+            <label class="tab-label" for="chck3">Martes</label>
+            <div class="tab-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" class="tab-input" id="chck4">
+            <label class="tab-label" for="chck4">Miercoles</label>
+            <div class="tab-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" class="tab-input" id="chck5">
+            <label class="tab-label" for="chck5">Jueves</label>
+            <div class="tab-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" class="tab-input" id="chck6">
+            <label class="tab-label" for="chck6">Viernes</label>
+            <div class="tab-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" class="tab-input" id="chck7">
+            <label class="tab-label" for="chck7">Sabado</label>
+            <div class="tab-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+            </div>
+          </div>
+      </div>
+    </section>
+
+
+    
+    <script src="./app.js"></script>
+</body>
+</html>
