@@ -127,7 +127,8 @@ a:hover{
   margin: 0.8em 0 2em 0;
 }
 
-.dp-form #dp-input{
+.dp-form #dp-days{
+  background: white;
   width: 250px;
   height: auto;
   font-size: 1.1em;
@@ -135,7 +136,7 @@ a:hover{
   left: 0;
 }
 
-.dp-form #dp-input:focus{
+.dp-form #dp-days:focus{
   outline-style: none;
   border: 2px solid var(--green);
 }
@@ -200,6 +201,20 @@ a:hover{
   background: var(--green);
 }
 
+.e-button{
+  width: 8em;
+  height: 3.3em;
+  margin: .3em 0 1em 0;
+  font-family: 'Poppins';
+  background: #ffa9a9;
+  border: 1px solid #ff4141;
+  color: white;
+}
+
+.e-button:hover{
+  background:#ff4141;
+}
+
 .accordion-area{
   width: 80%;
 }
@@ -239,7 +254,7 @@ a:hover{
 }
 
 .tab-content {
-  /* display: none; */
+  display: none;
   max-height: 0;
   padding: 0 1em;
   color: var(--green);
@@ -248,9 +263,9 @@ a:hover{
 }
 
 /* :checked*/
-.tab-input {
+/* .tab-input {
   pointer-events: none;
-}
+} */
 
 .tab-input {
   position: absolute;
@@ -267,12 +282,12 @@ a:hover{
 }
 
 .tab-input:checked ~ .tab-content {
-  /* display: flex; */
+  display: flex;
   max-height: 100vh;
   padding: 1em;
 }
 
-
+/* Tab Content Lists */
 
 
 
