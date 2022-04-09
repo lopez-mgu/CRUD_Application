@@ -236,13 +236,13 @@ a:hover{
   display: flex;
   justify-content: space-between;
   padding: 1em;
-  background: var(--green);
+  background: rgb(4, 227, 31,0.7);
   font-weight: bold;
   cursor: pointer;
 }
 
 .tab-label:hover {
-  background: navy;
+  background: var(--green);
 }
 
 .tab-label::after {
@@ -257,15 +257,10 @@ a:hover{
   display: none;
   max-height: 0;
   padding: 0 1em;
-  color: var(--green);
+  color: black;
   background: white;
   transition: all .35s;
 }
-
-/* :checked*/
-/* .tab-input {
-  pointer-events: none;
-} */
 
 .tab-input {
   position: absolute;
@@ -274,7 +269,7 @@ a:hover{
 }
 
 .tab-input:checked + .tab-label{
-  background: greenyellow;
+  background: var(--green);
 }
 
 .tab-input:checked + .tab-label::after {
@@ -283,11 +278,82 @@ a:hover{
 
 .tab-input:checked ~ .tab-content {
   display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
   max-height: 100vh;
   padding: 1em;
 }
 
 /* Tab Content Lists */
+
+.tab-content-list{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+}
+
+.tab-content-element{
+  display: grid;
+  grid-template-areas: 'p1 p1 eb rb';
+  width: 100%;
+  text-decoration: none;
+  list-style: none;
+  align-items: center;
+  font-family: 'Poppins';
+  font-size: 1.1em;
+}
+
+.tab-content-element >p{
+  grid-area: p1;
+}
+
+.tab-content-element >.edit-element-button{
+  grid-area: eb;
+}
+
+.tab-content-element >.remove-element-button{
+  grid-area: rb;
+}
+
+.remove-element-button{
+  width: 5.5em;
+  height: 2.5em;
+  margin: 1em;
+  font-family: 'Poppins';
+  background: #ffa9a9;
+  border: 1px solid #ff4141;
+  color: white;
+}
+
+.remove-element-button:hover{
+  background:#ff4141;
+}
+
+.edit-element-button{
+  width: 5.5em;
+  height: 2.5em;
+  margin: 1em;
+  font-family: 'Poppins';
+  background: rgb(4, 227, 31,0.5);
+  border: 1px solid var(--green);
+  color: white;
+}
+
+.edit-element-button:hover{
+  background: var(--green);
+}
+
+.tab-content-buttons{
+  display: flex;
+  flex-direction: row;
+
+}
+
+
+
 
 
 

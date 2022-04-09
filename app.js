@@ -21,7 +21,7 @@ let saturdayData=[];
 
 let daysTitles=['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
 
-
+//Area for Day Title Functions
 function RemoveTitle(){
     updatedaysTitleArr();
     if (workoutDay.value===''){
@@ -146,3 +146,16 @@ function renderTitles(arr){
 }
 
 renderTitles(daysTitles);
+
+//Area for exercises by day
+
+function AddExercise(){
+
+}
+
+
+
+
+
+
+
