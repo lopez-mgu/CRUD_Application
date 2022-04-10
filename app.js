@@ -22,6 +22,13 @@ const thursdayCheck=document.getElementById('chck5');
 const fridayCheck=document.getElementById('chck6');
 const saturdayCheck=document.getElementById('chck7');
 
+const sundayVoid=document.getElementById('exercise-void1');
+const mondayVoid=document.getElementById('exercise-void2');
+const tuesdayVoid=document.getElementById('exercise-void3');
+const wednesdayVoid=document.getElementById('exercise-void4');
+const thursdayVoid=document.getElementById('exercise-void5');
+const fridayVoid=document.getElementById('exercise-void6');
+const saturdayVoid=document.getElementById('exercise-void7');
 
 
 const titleWarning=document.getElementById('title-warning');
@@ -53,6 +60,71 @@ let editObj={
 }
 
 let daysTitles=['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
+
+sundayCheck.addEventListener('change',()=>{
+    let items=localStorage.getItem('sundayData');
+    if(items===null||items==='[]'){
+        sundayVoid.style.display="block";
+    }else{
+        sundayVoid.style.display="none";
+    }
+});
+
+mondayCheck.addEventListener('change',()=>{
+    let items=localStorage.getItem('mondayData');
+    if(items===null||items==='[]'){
+        mondayVoid.style.display="block";
+    }else{
+        mondayVoid.style.display="none";
+    }
+});
+
+tuesdayCheck.addEventListener('change',()=>{
+    let items=localStorage.getItem('tuesdayData');
+    if(items===null||items==='[]'){
+        tuesdayVoid.style.display="block";
+    }else{
+        tuesdayVoid.style.display="none";
+    }
+});
+
+wednesdayCheck.addEventListener('change',()=>{
+    let items=localStorage.getItem('wednesdayData');
+    if(items===null||items==='[]'){
+        wednesdayVoid.style.display="block";
+    }else{
+        wednesdayVoid.style.display="none";
+    }
+});
+
+thursdayCheck.addEventListener('change',()=>{
+    let items=localStorage.getItem('thursdayData');
+    if(items===null||items==='[]'){
+        thursdayVoid.style.display="block";
+    }else{
+        thursdayVoid.style.display="none";
+    }
+});
+
+fridayCheck.addEventListener('change',()=>{
+    let items=localStorage.getItem('fridayData');
+    if(items===null||items==='[]'){
+        fridayVoid.style.display="block";
+    }else{
+        fridayVoid.style.display="none";
+    }
+});
+
+saturdayCheck.addEventListener('change',()=>{
+    let items=localStorage.getItem('saturdayData');
+    if(items===null||items==='[]'){
+        saturdayVoid.style.display="block";
+    }else{
+        saturdayVoid.style.display="none";
+    }
+});
+
+
 
 //Area for Day Title Functions
 function RemoveTitle(){
@@ -209,36 +281,43 @@ function AddExercise(){
 
         switch(workoutDay.value){
             case 'Domingo':
+                sundayVoid.style.display="none";
                 sundayData.push(obj);
                 localStorage.setItem('sundayData',JSON.stringify(sundayData));
                 renderExercises('Domingo');
                 break;
             case 'Lunes':
+                mondayVoid.style.display="none";
                 mondayData.push(obj);
                 localStorage.setItem('mondayData',JSON.stringify(mondayData));
                 renderExercises('Lunes');
                 break;
             case 'Martes':
+                tuesdayVoid.style.display="none";
                 tuesdayData.push(obj);
                 localStorage.setItem('tuesdayData',JSON.stringify(tuesdayData));
                 renderExercises('Martes');
                 break;
             case 'Miercoles':
+                wednesdayVoid.style.display="none";
                 wednesdayData.push(obj);
                 localStorage.setItem('wednesdayData',JSON.stringify(wednesdayData));
                 renderExercises('Miercoles');
                 break;
             case 'Jueves':
+                thursdayVoid.style.display="none";
                 thursdayData.push(obj);
                 localStorage.setItem('thursdayData',JSON.stringify(thursdayData));
                 renderExercises('Jueves');
                 break;
             case 'Viernes':
+                fridayVoid.style.display="none";
                 fridayData.push(obj);
                 localStorage.setItem('fridayData',JSON.stringify(fridayData));
                 renderExercises('Viernes');
                 break;
             case 'Sabado':
+                saturdayVoid.style.display="none";
                 saturdayData.push(obj);
                 localStorage.setItem('saturdayData',JSON.stringify(saturdayData));
                 renderExercises('Sabado');
@@ -266,6 +345,7 @@ function renderExercises(daytoRender){
                     </li>               
                     `
                 });
+                if (items.length===0)sundayVoid.style.display="block";
             }
             break;
         case 'Lunes':
@@ -284,6 +364,7 @@ function renderExercises(daytoRender){
                     </li>               
                     `
                 });
+                if (items.length===0)mondayVoid.style.display="block";
             }
             break;
         case 'Martes':
@@ -296,12 +377,13 @@ function renderExercises(daytoRender){
                     <li class="tab-content-element">
                         <p>${element.name}, series de ${element.series} x ${element.reps} repeticiones</p>
                         <div class="tab-content-buttons">
-                            <button class="edit-element-button" onclick="editElement(this.id,'Martes",'${element.name}','${element.series}','${element.reps}')" id="${index}">Editar</button>
+                            <button class="edit-element-button" onclick="editElement(this.id,'Martes','${element.name}','${element.series}','${element.reps}')" id="${index}">Editar</button>
                             <button class="remove-element-button" onclick="removeElement(this.id,'Martes')" id="${index}">Remover</button>
                         </div>
                     </li>               
                     `
                 });
+                if (items.length===0)tuesdayVoid.style.display="block";
             }
             break;
         case 'Miercoles':
@@ -320,6 +402,7 @@ function renderExercises(daytoRender){
                     </li>               
                     `
                 });
+                if (items.length===0)wednesdayVoid.style.display="block";
             }
             break;
         case 'Jueves':
@@ -338,6 +421,7 @@ function renderExercises(daytoRender){
                     </li>               
                     `
                 });
+                if (items.length===0)thursdayVoid.style.display="block";
             }
             break;
         case 'Viernes':
@@ -356,6 +440,7 @@ function renderExercises(daytoRender){
                     </li>               
                     `
                 });
+                if (items.length===0)fridayVoid.style.display="block";
             }
             break;
         case 'Sabado':
@@ -374,6 +459,7 @@ function renderExercises(daytoRender){
                     </li>               
                     `
                 });
+                if (items.length===0)saturdayVoid.style.display="block";
             }
             break;
     }

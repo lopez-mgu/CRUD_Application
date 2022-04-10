@@ -432,6 +432,10 @@ a:hover{
   white-space: nowrap;
 }
 
+.warning-container-void{
+  display: none;
+}
+
 /*Footer Section*/
 /* Footer */
 
