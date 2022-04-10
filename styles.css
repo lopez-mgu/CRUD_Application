@@ -201,6 +201,22 @@ a:hover{
   background: var(--green);
 }
 
+.edit-button{
+  display: none;
+  width: 8em;
+  height: 3.3em;
+  margin: .3em 0 1em 0;
+  font-family: 'Poppins';
+  background: rgb(240, 142, 82);
+  border: 1px solid rgb(238, 111, 33);
+  color: white;
+}
+
+.edit-button:hover{
+  background: rgb(238, 111, 33);
+  /* background: rgb(240, 191, 161); */
+}
+
 .e-button{
   width: 8em;
   height: 3.3em;
@@ -217,6 +233,7 @@ a:hover{
 
 .accordion-area{
   width: 80%;
+  margin-bottom: 3em;
 }
 
 /* Accordion styles */
@@ -278,8 +295,9 @@ a:hover{
 
 .tab-input:checked ~ .tab-content {
   display: flex;
-  justify-content: center;
   box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-height: 100vh;
   padding: 1em;
@@ -293,30 +311,55 @@ a:hover{
   flex-direction: column;
   justify-items: center;
   justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .tab-content-element{
   display: grid;
-  grid-template-areas: 'p1 p1 eb rb';
+  grid-template-areas: 'p1 p1 bts';
   width: 100%;
   text-decoration: none;
   list-style: none;
   align-items: center;
   font-family: 'Poppins';
   font-size: 1.1em;
+  border-bottom: 1px solid gainsboro;
 }
 
 .tab-content-element >p{
   grid-area: p1;
+  margin: 0;
 }
 
-.tab-content-element >.edit-element-button{
+.tab-content-element > .tab-content-buttons{
+  grid-area: bts;
+}
+
+/* .tab-content-void{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: black;
+}
+
+.tab-content-void h3{
+  font-size: .875rem;
+  line-height: 1.25rem;
+  color: rgba(146,64,14,1);
+  white-space: nowrap;
+} */
+/* .tab-content-element >.edit-element-button{
   grid-area: eb;
 }
 
 .tab-content-element >.remove-element-button{
   grid-area: rb;
-}
+} */
 
 .remove-element-button{
   width: 5.5em;
@@ -349,22 +392,135 @@ a:hover{
 .tab-content-buttons{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Warning styles*/
+.warning-container{
+  display: none;
+  background: rgb(255, 255, 0,.1);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+.warning-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* .warning-icon{
+  flex-shrink: 2;
+} */
+
+.warning-icon-svg{
+  width: 1.25rem;
+  height: 1.25rem;
+  color: rgba(251,191,36,1);
+}
+
+.warning-text{
+  margin-left: 0.75rem;
+}
+
+.warning-text h3{
+  font-size: .875rem;
+  line-height: 1.25rem;
+  color: rgba(146,64,14,1);
+  white-space: nowrap;
+}
+
+/*Footer Section*/
+/* Footer */
+
+#footer{
+  background: rgb(53, 53, 53);
+  padding: 10px 0;
+  color: whitesmoke;
+  font-size: 0.85rem;
+}
+
+.footer-content ul{
+  list-style: none;
+}
+
+.footer-content a{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.footer-content a:hover{
+  color: var(--green);
+}
+
+.footer-content{
+  display: flex;
+  width: 60%;
+  margin: 1rem auto;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-content .footer-menu{
+  display: inline-block;
+  padding: 3px 0 15px;
+  margin: 0 40px;
+  justify-content: space-between;
+  width: 23%;
+}
+
+.footer-content .footer-menu p{
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.footer-content .footer-menu .footer-menu-item{
+  display: block;
+  padding: 10px 0;
+}
+
+/* Footer Socials */
+.socials{
+  display: flex;
+  flex-direction: column;
+}
+
+.socials i{
+margin: 20px 20px;
+font-size: 1.7rem;
+transition: all 300ms ease;
+}
+
+.socials i:hover{
+  cursor: pointer;
+  color: var(--green);
+}
+
+/* Footer Info */
+.footer-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
+.footer-info-items{
+  display: flex;    
+}
 
+.footer-info ul li{
+  list-style: none;
+  padding: 0.1rem 2rem;
+  font-size: 0.7rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.footer-info ul li:hover{
+  cursor: pointer;
+  color: var(--green);
+}
 
 
 @media (max-width: 768px) {
@@ -406,4 +562,63 @@ a:hover{
     width: 100%;
     background: white;
   }
+
+
+/*Accordion Area content*/
+.tab-content-element{
+  display: grid;
+  grid-template-areas: 
+  'p1'
+  'bts'
+  ;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Footer */
+
+.footer-content{
+  display: flex;
+  justify-content: left;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-content .footer-menu{
+  display: none;
+}
+
+.socials{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: left;
+  padding-bottom: .5rem;
+}
+
+.socials i{
+  margin: 7px 1rem;
+font-size: 1.7rem;
+transition: all 300ms ease;
+}
+
+/* Footer Info */
+.footer-info{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.footer-info-items{
+  display: flex;
+  flex-direction: column; 
+  padding: 1rem 0;
+  margin: 0;  
+}
+
+.footer-info-item{
+  margin: 0.3rem;
+}
+
 }

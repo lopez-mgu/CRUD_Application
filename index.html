@@ -45,11 +45,23 @@
             <label for="day-title" class="input-label">Titulo de Entrenamiento</label>
             <input type="text" name="day-title" id="day-title">
             <div class="day-title-buttons">
-              <button onclick="ChangeTitle()" class="io-button" id="day-title-button-a">Cambiar Titulo</button>
-              <button onclick="RemoveTitle()" class="e-button" id="day-title-button-e">Remover Titulo</button>
+              <button type="button" onclick="ChangeTitle()" class="io-button" id="day-title-button-a">Cambiar Titulo</button>
+              <button type="button" onclick="RemoveTitle()" class="e-button" id="day-title-button-e">Remover Titulo</button>
+            </div>
+            <div class="warning-container" id="title-warning">
+              <div class="warning-content">
+                <div class="warning-icon">
+                  <svg class="warning-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="warning-text">
+                  <h3>Introduce un titulo...</h3>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="form-inputs-group">
+          <div class="form-inputs-group" id="excercises-form">
             <label for="day-exercise" class="input-label">Nombre de Ejercicio</label>
             <input type="text" name="day-exercise" id="day-exercise">
             <label for="day-series" class="input-label">Número de Series</label>
@@ -57,8 +69,21 @@
             <label for="day-reps" class="input-label">Número de Repeticiones</label>
             <input type="number" id="day-reps" min="0">
           </div>
-          <button onclick="AddExercise()" class="io-button" id="day-exercise-button">Agregar Ejercicio</button>
+          <button type="button" onclick="AddExercise()" class="io-button" id="day-exercise-button">Agregar Ejercicio</button>
+          <button type="button" onclick="EditExercise()" class="edit-button" id="edit-exercise-button">Editar Ejercicio</button>
         </form>
+        <div class="warning-container" id="exercise-warning">
+          <div class="warning-content">
+            <div class="warning-icon">
+              <svg class="warning-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div class="warning-text">
+              <h3>Introduce todos los datos...</h3>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="accordion-area">
         <div class="tabs">
@@ -66,28 +91,12 @@
             <input type="checkbox" class="tab-input" id="chck1">
             <label class="tab-label" for="chck1" id="lbl_chck1">Domingo</label>
             <div class="tab-content">
-              <ul class="tab-content-list">
-                <li class="tab-content-element">
-                  <p>Press de Banca series 4 x 10 repeticiones</p>
-                  <div class="tab-content-buttons">
-                    <button class="edit-element-button">Editar</button>
-                    <button class="remove-element-button">Remover</button>
-                  </div>
-                </li>
-                <li class="tab-content-element">
-                  <p>Press de Banca series 4 x 10 repeticiones</p>
-                  <div class="tab-content-buttons">
-                    <button class="edit-element-button">Editar</button>
-                    <button class="remove-element-button">Remover</button>
-                  </div>
-                </li>
-                <li class="tab-content-element">
-                  <p>Press de Banca series 4 x 10 repeticiones</p>
-                  <div class="tab-content-buttons">
-                    <button class="edit-element-button">Editar</button>
-                    <button class="remove-element-button">Remover</button>
-                  </div>
-                </li>
+              <!-- <div class="tab content-void" id="void1">
+                <h3>Sin Elementos...</h3>
+              </div>
+               -->
+              <ul class="tab-content-list" id="sunday-list">
+
               </ul>
             </div>
           </div>
@@ -95,49 +104,98 @@
             <input type="checkbox" class="tab-input" id="chck2">
             <label class="tab-label" for="chck2" id="lbl_chck2">Lunes</label>
             <div class="tab-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+              <ul class="tab-content-list" id="monday-list">
+
+              </ul>
             </div>
           </div>
           <div class="tab">
             <input type="checkbox" class="tab-input" id="chck3">
             <label class="tab-label" for="chck3" id="lbl_chck3">Martes</label>
             <div class="tab-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+              <ul class="tab-content-list" id="tuesday-list">
+
+              </ul>
             </div>
           </div>
           <div class="tab">
             <input type="checkbox" class="tab-input" id="chck4">
             <label class="tab-label" for="chck4" id="lbl_chck4">Miercoles</label>
             <div class="tab-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+              <ul class="tab-content-list" id="wednesday-list">
+
+              </ul>
             </div>
           </div>
           <div class="tab">
             <input type="checkbox" class="tab-input" id="chck5">
             <label class="tab-label" for="chck5" id="lbl_chck5">Jueves</label>
             <div class="tab-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+              <ul class="tab-content-list" id="thursday-list">
+
+              </ul>
             </div>
           </div>
           <div class="tab">
             <input type="checkbox" class="tab-input" id="chck6">
             <label class="tab-label" for="chck6" id="lbl_chck6">Viernes</label>
             <div class="tab-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+              <ul class="tab-content-list" id="friday-list">
+
+              </ul>
             </div>
           </div>
           <div class="tab">
             <input type="checkbox" class="tab-input" id="chck7">
             <label class="tab-label" for="chck7" id="lbl_chck7">Sabado</label>
             <div class="tab-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+              <ul class="tab-content-list" id="saturday-list">
+
+              </ul>
             </div>
           </div>
       </div>
     </section>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-content">
+          <ul class="footer-menu">
+              <p>Suplementación</p>
+              <li class="footer-menu-item"><a href="#">Creatina</a></li>
+              <li class="footer-menu-item"><a href="#">Proteina</a></li>
+              <li class="footer-menu-item"><a href="#">BCAA</a></li>
+          </ul>
+          <ul class="footer-menu">
+              <p>Nuestros Servicios</p>
+              <li class="footer-menu-item"><a href="#">Entrenadores Personales</a></li>
+              <li class="footer-menu-item"><a href="#">Plan de Alimentación</a></li>
+              <li class="footer-menu-item"><a href="#">Reacondicionamiento</a></li>
+          </ul>
+          <ul class="footer-menu">
+              <p>Acerca de</p>
+              <li class="footer-menu-item"><a href="#">Ubicación</a></li>
+              <li class="footer-menu-item"><a href="#">Historia</a></li>
+              <li class="footer-menu-item"><a href="#">Quiénes Somos</a></li>
+          </ul>
+          <div class="socials">
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-facebook-f"></i>
+          </div>
+      </div>
+      <div class="footer-info">
+        <ul class="footer-info-items">
+          <li class="footer-info-item">ActiveMotion &copy; 2022</li>
+          <li class="footer-info-item">Legal</li>
+          <li class="footer-info-item">Centro de Privacidad</li>
+          <li class="footer-info-item">Política de privacidad</li>
+          <li class="footer-info-item">Cookies</li>
+          <li class="footer-info-item">Sobre anúncios</li>
+        </ul>
+      </div>
+    </footer>
 
-
-    
+    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
     <script src="./app.js"></script>
 </body>
 </html>
